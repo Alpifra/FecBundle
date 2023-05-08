@@ -2,10 +2,11 @@
 
 namespace A5sys\FecBundle\Service;
 
-use A5sys\FecBundle\Computer\DebitCredit\DebitCreditComputerInterface;
 use A5sys\FecBundle\Dumper\DumperInterface;
-use A5sys\FecBundle\Normalizer\NormalizerInterface;
 use Symfony\Component\HttpFoundation\File\File;
+use A5sys\FecBundle\Normalizer\NormalizerInterface;
+use A5sys\FecBundle\ValueObject\EcritureComptableInterface;
+use A5sys\FecBundle\Computer\DebitCredit\DebitCreditComputerInterface;
 
 /**
  * Fec Manager is the entry point for generating FEC file
@@ -58,7 +59,7 @@ class FecManager
      * @param array<EcritureComptableInterface> $ecritureComptableList List of conventionned input objects
      *
      * @throws \A5sys\FecBundle\Exception\FecException
-     * @return Symfony\Component\HttpFoundation\File\File
+     * @return File
      */
     public function generateFile($siren, \DateTime $dateClotureExercice, $ecritureComptableList)
     {
@@ -86,7 +87,7 @@ class FecManager
      * Get the File object
      * @param string    $siren                 Siren number
      * @param \DateTime $dateClotureExercice   Closing date
-     * @return Symfony\Component\HttpFoundation\File\File
+     * @return File
      */
     protected function getFile($siren, \DateTime $dateClotureExercice)
     {

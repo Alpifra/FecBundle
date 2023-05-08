@@ -17,14 +17,13 @@ class Configuration implements ConfigurationInterface
      */
     public function getConfigTreeBuilder()
     {
-        $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('fec');
+        $treeBuilder = new TreeBuilder('fec_bundle');
+        $rootNode = $treeBuilder->getRootNode();
 
         $rootNode
             ->children()
-                ->scalarNode('defaultTempDir')->end()
-            ->end()
-        ;
+            ->scalarNode('defaultTempDir')->end()
+            ->end();
 
         return $treeBuilder;
     }
