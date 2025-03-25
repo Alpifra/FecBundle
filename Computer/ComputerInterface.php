@@ -13,17 +13,13 @@ interface ComputerInterface
      * compute data
      * Warning : order matters
      * @param EcritureComptableInterface $ecritureComptableInterface
-     *
-     * @return array
      */
-    public function toArray(EcritureComptableInterface $ecritureComptableInterface);
+    public function toArray(EcritureComptableInterface $ecritureComptableInterface): array;
 
     /**
      * compute data to an ecritureComptableinterface
      * @param EcritureComptableInterface $ecritureComptableInterface
      * @param array $data the FEC entry
-     *
-     * @return EcritureComptableInterface
      */
-    public function toValueObject(EcritureComptableInterface $ecritureComptableInterface, array $data);
+    public function toValueObject(EcritureComptableInterface $ecritureComptableInterface, array $data): EcritureComptableInterface;
 }

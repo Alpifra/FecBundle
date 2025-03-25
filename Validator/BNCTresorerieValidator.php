@@ -15,10 +15,10 @@ class BNCTresorerieValidator extends BATresorerieValidator
     /**
      * Validate one EcritureBNCTresorerieInterface
      * @param EcritureComptableInterface $ecritureComptable
-     * @throw FecValidationException
-     * @throw FecInvalidInterfaceException
+     * @throws FecValidationException
+     * @throws FecInvalidInterfaceException
      */
-    public function validate(EcritureComptableInterface $ecritureComptable)
+    public function validate(EcritureComptableInterface $ecritureComptable): void
     {
         if (!$ecritureComptable instanceof EcritureBNCTresorerieInterface) {
             throw new FecException(get_class($this).' accepts only EcritureBNCTresorerieInterface instances. Maybe check object list you gave to the manager.');

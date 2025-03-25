@@ -18,26 +18,25 @@ class BATresorerieNormalizer extends AbstractStandardNormalizer
      * Warning : order matters
      * @return array<string>
      */
-    public function getFieldNames()
+    public function getFieldNames(): array
     {
         $parentFields = parent::getFieldNames();
 
-        return array_merge($parentFields, array(
+        return array_merge($parentFields, [
             'DateRglt',
             'ModeRglt',
             'NatOp',
-        ));
+        ]);
     }
 
     /**
      * Normalize one EcritureBATresorerieInterface
      * Warning : order matters
      * @param EcritureComptableInterface $ecritureComptable
-     * @throw A5sys\FecBundle\Exception\FecException
-     * @throw A5sys\FecBundle\Exception\FecValidationException
-     * @return array
+     * @throws A5sys\FecBundle\Exception\FecException
+     * @throws A5sys\FecBundle\Exception\FecValidationException
      */
-    public function toArray(EcritureComptableInterface $ecritureComptable)
+    public function toArray(EcritureComptableInterface $ecritureComptable): array
     {
         if (!$ecritureComptable instanceof EcritureBATresorerieInterface) {
             throw new FecException(get_class($this).' accepts only EcritureBATresorerieInterface instances. Maybe check object list you gave to the manager.');
@@ -57,9 +56,8 @@ class BATresorerieNormalizer extends AbstractStandardNormalizer
     /**
      * Normalize one array to an EcritureComptableInterface
      * @param array $data
-     * @return EcritureBICIS
      */
-    public function toValueObject(array $data)
+    public function toValueObject(array $data): EcritureBATresorerie
     {
         $ecritureComptable = new EcritureBATresorerie();
 

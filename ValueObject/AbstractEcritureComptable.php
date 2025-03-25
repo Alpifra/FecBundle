@@ -118,162 +118,144 @@ abstract class AbstractEcritureComptable implements EcritureComptableInterface
 
     /**
      * Retourne le code journal de l'écriture comptable
-     * @return string
      */
-    public function getJournalCode()
+    public function getJournalCode(): string
     {
         return $this->journalCode;
     }
 
     /**
      * Retourne le libellé journal de l'écriture comptable
-     * @return string
      */
-    public function getJournalLib()
+    public function getJournalLib(): string
     {
         return $this->journalLib;
     }
 
     /**
      * Retourne le numéro sur une séquence continue de l'écriture comptable
-     * @return string
      */
-    public function getEcritureNum()
+    public function getEcritureNum(): string
     {
         return $this->ecritureNum;
     }
 
     /**
      * Retourne la date de comptabilisation de l'écriture comptable
-     * @return \DateTime
      */
-    public function getEcritureDate()
+    public function getEcritureDate(): \DateTime
     {
         return $this->ecritureDate;
     }
 
     /**
      * Retourne le numéro de compte, dont les trois premiers caractères doivent correspondre à des chiffres respectant les normes du plan comptable français
-     * @return string
      */
-    public function getCompteNum()
+    public function getCompteNum(): string
     {
         return $this->compteNum;
     }
 
     /**
      * Retourne le libellé de compte, conformément à la nomenclature du plan comptable français
-     * @return string
      */
-    public function getCompteLib()
+    public function getCompteLib(): string
     {
         return $this->compteLib;
     }
 
     /**
      * Retourne le numéro de compte auxiliaire (à blanc si non utilisé)
-     * @return string
      */
-    public function getCompAuxNum()
+    public function getCompAuxNum(): string
     {
         return $this->compAuxNum;
     }
 
     /**
      * Retourne le libellé de compte auxiliaire (à blanc si non utilisé)
-     * @return string
      */
-    public function getCompAuxLib()
+    public function getCompAuxLib(): string
     {
         return $this->compAuxLib;
     }
 
     /**
      * Retourne la référence de la pièce justificative
-     * @return string
      */
-    public function getPieceRef()
+    public function getPieceRef(): string
     {
         return $this->pieceRef;
     }
 
     /**
      * Retourne la date de la pièce justificative
-     * @return \DateTime
      */
-    public function getPieceDate()
+    public function getPieceDate(): \DateTime
     {
         return $this->pieceDate;
     }
 
     /**
      * Retourne le libellé de l'écriture comptable
-     * @return string
      */
-    public function getEcritureLib()
+    public function getEcritureLib(): string
     {
         return $this->ecritureLib;
     }
 
     /**
      * Retourne le montant au débit
-     * @return float
      */
-    public function getDebit()
+    public function getDebit(): float
     {
         return $this->debit;
     }
 
     /**
      * Retourne le montant au crédit
-     * @return float
      */
-    public function getCredit()
+    public function getCredit(): float
     {
         return $this->credit;
     }
 
     /**
      * Retourne le lettrage de l'écriture comptable (à blanc si non utilisé)
-     * @return string
      */
-    public function getEcritureLet()
+    public function getEcritureLet(): string
     {
         return $this->ecritureLet;
     }
 
     /**
      * Retourne la date de lettrage (à blanc si non utilisé)
-     * @return \DateTime
      */
-    public function getDateLet()
+    public function getDateLet(): \DateTime
     {
         return $this->dateLet;
     }
 
     /**
      * Retourne la date de validation de l'écriture comptable
-     * @return \DateTime
      */
-    public function getValidDate()
+    public function getValidDate(): \DateTime
     {
         return $this->validDate;
     }
 
     /**
      * Retourne le montant en devise (à blanc si non utilisé)
-     * @return float
      */
-    public function getMontantdevise()
+    public function getMontantdevise(): float
     {
         return $this->montantdevise;
     }
 
     /**
      * Retourne l'identifiant de la devise (à blanc si non utilisé)
-     * @return string
      */
-    public function getIdevise()
+    public function getIdevise(): string
     {
         return $this->idevise;
     }
@@ -281,9 +263,8 @@ abstract class AbstractEcritureComptable implements EcritureComptableInterface
     /**
      * Affecte le code journal de l'écriture comptable
      * @param string $journalCode
-     * @return self
      */
-    public function setJournalCode($journalCode)
+    public function setJournalCode($journalCode): self
     {
         $this->journalCode = $journalCode;
 
@@ -293,9 +274,8 @@ abstract class AbstractEcritureComptable implements EcritureComptableInterface
     /**
      * Affecte le libellé journal de l'écriture comptable
      * @param string $journalLib
-     * @return self
      */
-    public function setJournalLib($journalLib)
+    public function setJournalLib($journalLib): self
     {
         $this->journalLib = $journalLib;
 
@@ -305,9 +285,8 @@ abstract class AbstractEcritureComptable implements EcritureComptableInterface
     /**
      * Affecte le numéro sur une séquence continue de l'écriture comptable
      * @param string $ecritureNum
-     * @return self
      */
-    public function setEcritureNum($ecritureNum)
+    public function setEcritureNum($ecritureNum): self
     {
         $this->ecritureNum = $ecritureNum;
 
@@ -317,9 +296,8 @@ abstract class AbstractEcritureComptable implements EcritureComptableInterface
     /**
      * Affecte la date de comptabilisation de l'écriture comptable
      * @param \DateTime $ecritureDate
-     * @return self
      */
-    public function setEcritureDate(\DateTime $ecritureDate)
+    public function setEcritureDate(\DateTime $ecritureDate): self
     {
         $this->ecritureDate = $ecritureDate;
 
@@ -329,9 +307,8 @@ abstract class AbstractEcritureComptable implements EcritureComptableInterface
     /**
      * Affecte le numéro de compte, dont les trois premiers caractères doivent correspondre à des chiffres respectant les normes du plan comptable français
      * @param string $compteNum
-     * @return self
      */
-    public function setCompteNum($compteNum)
+    public function setCompteNum($compteNum): self
     {
         $this->compteNum = $compteNum;
 
@@ -341,9 +318,8 @@ abstract class AbstractEcritureComptable implements EcritureComptableInterface
     /**
      * Affecte le libellé de compte, conformément à la nomenclature du plan comptable français
      * @param string $compteLib
-     * @return self
      */
-    public function setCompteLib($compteLib)
+    public function setCompteLib($compteLib): self
     {
         $this->compteLib = $compteLib;
 
@@ -353,9 +329,8 @@ abstract class AbstractEcritureComptable implements EcritureComptableInterface
     /**
      * Optionnel - Affecte le numéro de compte auxiliaire (à blanc si non utilisé)
      * @param string $compAuxNum
-     * @return self
      */
-    public function setCompAuxNum($compAuxNum = null)
+    public function setCompAuxNum($compAuxNum = null): self
     {
         $this->compAuxNum = $compAuxNum;
 
@@ -365,9 +340,8 @@ abstract class AbstractEcritureComptable implements EcritureComptableInterface
     /**
      * Optionnel - Affecte le libellé de compte auxiliaire (à blanc si non utilisé)
      * @param string $compAuxLib
-     * @return self
      */
-    public function setCompAuxLib($compAuxLib = null)
+    public function setCompAuxLib($compAuxLib = null): self
     {
         $this->compAuxLib = $compAuxLib;
 
@@ -377,9 +351,8 @@ abstract class AbstractEcritureComptable implements EcritureComptableInterface
     /**
      * Affecte la référence de la pièce justificative
      * @param string $pieceRef
-     * @return self
      */
-    public function setPieceRef($pieceRef)
+    public function setPieceRef($pieceRef): self
     {
         $this->pieceRef = $pieceRef;
 
@@ -389,9 +362,8 @@ abstract class AbstractEcritureComptable implements EcritureComptableInterface
     /**
      * Affecte la date de la pièce justificative
      * @param \DateTime $pieceDate
-     * @return self
      */
-    public function setPieceDate(\DateTime $pieceDate)
+    public function setPieceDate(\DateTime $pieceDate): self
     {
         $this->pieceDate = $pieceDate;
 
@@ -401,9 +373,8 @@ abstract class AbstractEcritureComptable implements EcritureComptableInterface
     /**
      * Affecte le libellé de l'écriture comptable
      * @param string $ecritureLib
-     * @return self
      */
-    public function setEcritureLib($ecritureLib)
+    public function setEcritureLib($ecritureLib): self
     {
         $this->ecritureLib = $ecritureLib;
 
@@ -413,10 +384,9 @@ abstract class AbstractEcritureComptable implements EcritureComptableInterface
     /**
      * Affecte le montant au débit
      * @param float $debit
-     * @return self
-     * @throw \LogicException
+     * @throws \LogicException
      */
-    public function setDebit($debit)
+    public function setDebit($debit): self
     {
         if ($debit !== null && !is_numeric($debit)) {
             throw new \LogicException('setDebit : "'.$debit.'" is not a numeric value');
@@ -430,10 +400,9 @@ abstract class AbstractEcritureComptable implements EcritureComptableInterface
     /**
      * Affecte le montant au crédit
      * @param float $credit
-     * @return self
-     * @throw \LogicException
+     * @throws \LogicException
      */
-    public function setCredit($credit)
+    public function setCredit($credit): self
     {
         if ($credit !== null && !is_numeric($credit)) {
             throw new \LogicException('setCredit : "'.$credit.'" is not a numeric value');
@@ -447,9 +416,8 @@ abstract class AbstractEcritureComptable implements EcritureComptableInterface
     /**
      * Optionnel - Affecte le lettrage de l'écriture comptable (à blanc si non utilisé)
      * @param string $ecritureLet
-     * @return self
      */
-    public function setEcritureLet($ecritureLet = null)
+    public function setEcritureLet($ecritureLet = null): self
     {
         $this->ecritureLet = $ecritureLet;
 
@@ -459,9 +427,8 @@ abstract class AbstractEcritureComptable implements EcritureComptableInterface
     /**
      * Optionnel - Affecte la date de lettrage (à blanc si non utilisé)
      * @param \DateTime $dateLet
-     * @return self
      */
-    public function setDateLet(\DateTime $dateLet = null)
+    public function setDateLet(\DateTime $dateLet = null): self
     {
         $this->dateLet = $dateLet;
 
@@ -471,9 +438,8 @@ abstract class AbstractEcritureComptable implements EcritureComptableInterface
     /**
      * Affecte la date de validation de l'écriture comptable
      * @param \DateTime $validDate
-     * @return self
      */
-    public function setValidDate(\DateTime $validDate)
+    public function setValidDate(\DateTime $validDate): self
     {
         $this->validDate = $validDate;
 
@@ -483,10 +449,9 @@ abstract class AbstractEcritureComptable implements EcritureComptableInterface
     /**
      * Optionnel - Affecte le montant en devise (à blanc si non utilisé)
      * @param float $montantDevise
-     * @return self
-     * @throw \LogicException
+     * @throws \LogicException
      */
-    public function setMontantdevise($montantDevise = null)
+    public function setMontantdevise($montantDevise = null): self
     {
         if ($montantDevise !== null && !is_numeric($montantDevise)) {
             throw new \LogicException('setMontantdevise : "'.$montantDevise.'" is not a numeric value');
@@ -500,9 +465,8 @@ abstract class AbstractEcritureComptable implements EcritureComptableInterface
     /**
      * Optionnel - Affecte l'identifiant de la devise (à blanc si non utilisé)
      * @param string $idDevise
-     * @return self
      */
-    public function setIdevise($idDevise = null)
+    public function setIdevise($idDevise = null): self
     {
         $this->idevise = $idDevise;
 

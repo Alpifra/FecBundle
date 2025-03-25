@@ -9,14 +9,12 @@ interface EcritureBNCTresorerieInterface extends EcritureBATresorerieInterface
 {
     /**
      * Retourne l'identification du client
-     * @return string
      */
-    public function getIdClient();
+    public function getIdClient(): string;
 
     /**
      * Affecte l'identification du client
      * @param string $idClient
-     * @return \A5sys\FecBundle\ValueObject\EcritureBNCTresorerieInterface
      */
-    public function setIdClient($idClient = null);
+    public function setIdClient($idClient = null): self;
 }

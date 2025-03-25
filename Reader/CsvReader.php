@@ -32,7 +32,7 @@ class CsvReader implements ReaderInterface
      * @param File  $file
      * @return array<array>
      */
-    public function read(File $file)
+    public function read(File $file): array
     {
         $splFileObject = $file->openFile('r');
 
@@ -51,7 +51,7 @@ class CsvReader implements ReaderInterface
      * @param array          $fieldNames
      * @return array<array>
      */
-    protected function readCsv(\SplFileObject $fileObject)
+    protected function readCsv(\SplFileObject $fileObject): array
     {
         $header = null;
         $data = [];
@@ -80,9 +80,8 @@ class CsvReader implements ReaderInterface
      * Read one line in the file
      * @param \SplFileObject $fileObject
      * @param int            $cnt index of the entry in the file
-     * @return array
      */
-    protected function readLine(\SplFileObject $fileObject, $cnt)
+    protected function readLine(\SplFileObject $fileObject, $cnt): array
     {
         $rawRow = $fileObject->fgetcsv($this->separator);
         $row = null;
@@ -121,10 +120,10 @@ class CsvReader implements ReaderInterface
      * @param array $row
      * @param int   $cnt index of the entry in the file
      *
-     * @throw FecException
+     * @throws FecException
      * @return array the modified row
      */
-    protected function convertDateFields(array $row, $cnt)
+    protected function convertDateFields(array $row, $cnt): array
     {
         $fields = ['EcritureDate', 'PieceDate', 'DateLet', 'ValidDate', 'DateRglt'];
         foreach ($fields as $field) {
@@ -150,10 +149,10 @@ class CsvReader implements ReaderInterface
      * @param array $row
      * @param int   $cnt index of the entry in the file
      *
-     * @throw FecException
+     * @throws FecException
      * @return array the modified row
      */
-    protected function convertFloatFields(array $row, $cnt)
+    protected function convertFloatFields(array $row, $cnt): array
     {
         $fields = ['Debit', 'Credit', 'Montant', 'Montantdevise'];
         foreach ($fields as $field) {
@@ -179,10 +178,10 @@ class CsvReader implements ReaderInterface
      * @param array $row
      * @param int   $cnt index of the entry in the file
      *
-     * @throw FecException
+     * @throws FecException
      * @return array the modified row
      */
-    protected function convertStringFields(array $row, $cnt)
+    protected function convertStringFields(array $row, $cnt): array
     {
         foreach ($row as $field => $value) {
             if (is_string($row[$field]) && $row[$field] === '') {

@@ -15,9 +15,8 @@ class EcritureBNCTresorerie extends EcritureBATresorerie implements EcritureBNCT
 
     /**
      * Retourne l'identification du client
-     * @return string
      */
-    public function getIdClient()
+    public function getIdClient(): string
     {
         return $this->idClient;
     }
@@ -25,9 +24,8 @@ class EcritureBNCTresorerie extends EcritureBATresorerie implements EcritureBNCT
     /**
      * Affecte le mode de réglement
      * @param string $idClient
-     * @return \A5sys\FecBundle\ValueObject\EcritureBNCTresorerie
      */
-    public function setIdClient($idClient = null)
+    public function setIdClient($idClient = null): self
     {
         $this->idClient = $idClient;
 

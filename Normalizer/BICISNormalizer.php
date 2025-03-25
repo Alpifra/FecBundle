@@ -13,9 +13,8 @@ class BICISNormalizer extends AbstractStandardNormalizer
     /**
      * Normalize one array to an EcritureComptableInterface
      * @param array $data
-     * @return EcritureBICIS
      */
-    public function toValueObject(array $data)
+    public function toValueObject(array $data): EcritureBICIS
     {
         $ecritureComptable = new EcritureBICIS();
 

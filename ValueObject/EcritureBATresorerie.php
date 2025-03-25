@@ -27,27 +27,24 @@ class EcritureBATresorerie extends AbstractEcritureComptable implements Ecriture
 
     /**
      * Retourne la date de réglement de l'écriture comptable
-     * @return \DateTime
      */
-    public function getDateRglt()
+    public function getDateRglt(): \DateTime
     {
         return $this->dateRglt;
     }
 
     /**
      * Retourne le mode de réglement
-     * @return string
      */
-    public function getModeRglt()
+    public function getModeRglt(): string
     {
         return $this->modeRglt;
     }
 
     /**
      * Retourne la nature de l'opération
-     * @return string
      */
-    public function getNatOp()
+    public function getNatOp(): string
     {
         return $this->natOp;
     }
@@ -55,9 +52,8 @@ class EcritureBATresorerie extends AbstractEcritureComptable implements Ecriture
     /**
      * Affecte la date de réglement de l'écriture comptable
      * @param \DateTime $dateRglt
-     * @return \A5sys\FecBundle\ValueObject\EcritureBATresorerie
      */
-    public function setDateRglt(\DateTime $dateRglt)
+    public function setDateRglt(\DateTime $dateRglt): self
     {
         $this->dateRglt = $dateRglt;
 
@@ -67,9 +63,8 @@ class EcritureBATresorerie extends AbstractEcritureComptable implements Ecriture
     /**
      * Affecte le mode de réglement
      * @param string $modeRglt
-     * @return \A5sys\FecBundle\ValueObject\EcritureBATresorerie
      */
-    public function setModeRglt($modeRglt)
+    public function setModeRglt($modeRglt): self
     {
         $this->modeRglt = $modeRglt;
 
@@ -79,9 +74,8 @@ class EcritureBATresorerie extends AbstractEcritureComptable implements Ecriture
     /**
      * Affecte la nature de l'opération
      * @param string $natOp
-     * @return \A5sys\FecBundle\ValueObject\EcritureBATresorerie
      */
-    public function setNatOp($natOp = null)
+    public function setNatOp($natOp = null): self
     {
         $this->natOp = $natOp;
 

@@ -127,7 +127,7 @@ The 3 last arguments are the services you should carefuly choose to generate the
 
 In a controller :
 
-        $fecLines = array();
+        $fecLines = [];
         foreach ($ecritureLignes as $ecritureLigne) {
             $fecLine = new \A5sys\FecBundle\ValueObject\EcritureBICIS();
             $fecLine
@@ -154,7 +154,7 @@ In a controller :
             $fecLines[] = $fecLine;
         }
 
-		$this->get('fec.manager.my')->generateFile($sirenNumber, $dateCloture, $fecLines)
+        $this->get('fec.manager.my')->generateFile($sirenNumber, $dateCloture, $fecLines)
 
 In a service :
 
@@ -263,11 +263,10 @@ In a controller :
      * Import a FEC file
      *
      * @param Request $request
-     * @return Response
      *
      * @Route("/import/fec", name="import_fec")
      */
-    public function importFecAction(Request $request)
+    public function importFecAction(Request $request): Response
     {
         // get the uploaded file. With Symfony you directly get a UploadedFile which extends File
         $uploadedFile = $request->files->get('file');

@@ -9,40 +9,34 @@ interface EcritureBATresorerieInterface extends EcritureComptableInterface
 {
     /**
      * Retourne la date de réglement de l'écriture comptable
-     * @return \DateTime
      */
-    public function getDateRglt();
+    public function getDateRglt(): \DateTime;
 
     /**
      * Retourne le mode de réglement
-     * @return string
      */
-    public function getModeRglt();
+    public function getModeRglt(): string;
 
     /**
      * Retourne la nature de l'opération
-     * @return string
      */
-    public function getNatOp();
+    public function getNatOp(): string;
 
     /**
      * Affecte la date de réglement de l'écriture comptable
      * @param \DateTime $dateRglt
-     * @return \A5sys\FecBundle\ValueObject\EcritureBATresorerieInterface
      */
-    public function setDateRglt(\DateTime $dateRglt);
+    public function setDateRglt(\DateTime $dateRglt): self;
 
     /**
      * Affecte le mode de réglement
      * @param string $modeRglt
-     * @return \A5sys\FecBundle\ValueObject\EcritureBATresorerieInterface
      */
-    public function setModeRglt($modeRglt);
+    public function setModeRglt($modeRglt): self;
 
     /**
      * Affecte la nature de l'opération
      * @param string $natOp
-     * @return \A5sys\FecBundle\ValueObject\EcritureBATresorerieInterface
      */
-    public function setNatOp($natOp = null);
+    public function setNatOp($natOp = null): self;
 }

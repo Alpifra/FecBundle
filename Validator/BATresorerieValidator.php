@@ -16,10 +16,10 @@ class BATresorerieValidator extends StandardValidator
     /**
      * Validate one EcritureBATresorerieInterface
      * @param EcritureComptableInterface $ecritureComptable
-     * @throw FecValidationException
-     * @throw FecInvalidInterfaceException
+     * @throws FecValidationException
+     * @throws FecInvalidInterfaceException
      */
-    public function validate(EcritureComptableInterface $ecritureComptable)
+    public function validate(EcritureComptableInterface $ecritureComptable): void
     {
         if (!$ecritureComptable instanceof EcritureBATresorerieInterface) {
             throw new FecException(get_class($this).' accepts only EcritureBATresorerieInterface instances. Maybe check object list you gave to the manager.');
@@ -28,10 +28,10 @@ class BATresorerieValidator extends StandardValidator
         parent::validate($ecritureComptable);
 
         // validate that all mandatory values are set
-        $notNullMethods = array(
+        $notNullMethods = [
             'DateRglt' => 'getDateRglt',
             'ModeRglt' => 'getModeRglt',
-        );
+        ];
 
         foreach ($notNullMethods as $field => $method) {
             if ($this->isNullOrEmptyString($ecritureComptable->$method())) {

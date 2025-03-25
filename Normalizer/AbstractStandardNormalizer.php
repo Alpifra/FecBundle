@@ -31,9 +31,9 @@ abstract class AbstractStandardNormalizer implements NormalizerInterface
      * Warning : order matters
      * @return array<string>
      */
-    public function getFieldNames()
+    public function getFieldNames(): array
     {
-        return array(
+        return [
             'JournalCode',
             'JournalLib',
             'EcritureNum',
@@ -50,21 +50,20 @@ abstract class AbstractStandardNormalizer implements NormalizerInterface
             'ValidDate',
             'Montantdevise',
             'Idevise',
-        );
+        ];
     }
 
     /**
      * Normalize one EcritureComptableInterface
      * Warning : order matters
      * @param EcritureComptableInterface $ecritureComptable
-     * @throw A5sys\FecBundle\Exception\FecValidationException
-     * @return array
+     * @throws A5sys\FecBundle\Exception\FecValidationException
      */
-    public function toArray(EcritureComptableInterface $ecritureComptable)
+    public function toArray(EcritureComptableInterface $ecritureComptable): array
     {
         $this->validator->validate($ecritureComptable);
 
-        $data = array();
+        $data = [];
 
         $data['JournalCode'] = $ecritureComptable->getJournalCode();
         $data['JournalLib'] = $ecritureComptable->getJournalLib();
@@ -116,7 +115,7 @@ abstract class AbstractStandardNormalizer implements NormalizerInterface
      * Validate the object
      * @param EcritureComptableInterface $ecritureComptable
      *
-     * @throw FecValidationException
+     * @throws FecValidationException
      */
     public function validateValueObject(EcritureComptableInterface $ecritureComptable)
     {

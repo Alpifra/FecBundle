@@ -31,9 +31,8 @@ class CsvDumper implements DumperInterface
 
     /**
      * fileExtension getter
-     * @return string
      */
-    public function getFileExtension()
+    public function getFileExtension(): string
     {
         return $this->fileExtension;
     }
@@ -43,9 +42,8 @@ class CsvDumper implements DumperInterface
      * @param File  $file
      * @param array $fieldNames array of the field names
      * @param array $data       assoc array of the data to be dumped
-     * @return Symfony\Component\HttpFoundation\File\File
      */
-    public function dump(File $file, $fieldNames, $data)
+    public function dump(File $file, $fieldNames, $data): File
     {
         $splFileObject = $file->openFile('w+');
 
@@ -67,13 +65,13 @@ class CsvDumper implements DumperInterface
     protected function writeCsv(\SplFileObject $fileObject, array $fieldNames, array $data)
     {
         // CSV column names : convert to ISO-8859-15
-        $headers = array();
+        $headers = [];
         foreach ($fieldNames as $fieldName) {
             $headers[] = mb_convert_encoding($fieldName, static::CHARSET);
         }
         $fileObject->fputcsv($headers, $this->separator);
 
-        $csvData = array();
+        $csvData = [];
         foreach ($data as $fecEntry) {
             // prepare the data to be printed
             $csvData[] = $this->prepareCsvData($fecEntry);
@@ -88,11 +86,10 @@ class CsvDumper implements DumperInterface
     /**
      * Prepare a fecEntry to be printed in the csv, by formating floats and DateTime
      * @param array $fecEntry
-     * @return array
      */
-    protected function prepareCsvData($fecEntry)
+    protected function prepareCsvData($fecEntry): array
     {
-        $csvDataArray = array();
+        $csvDataArray = [];
         foreach ($fecEntry as $value) {
             // format numbers
             if (is_float($value)) {

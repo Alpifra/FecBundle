@@ -14,10 +14,8 @@ class Configuration implements ConfigurationInterface
 {
     /**
      * {@inheritdoc}
-     * 
-     * @return TreeBuilder
      */
-    public function getConfigTreeBuilder()
+    public function getConfigTreeBuilder(): TreeBuilder
     {
         $treeBuilder = new TreeBuilder('fec_bundle');
         $rootNode = $treeBuilder->getRootNode();

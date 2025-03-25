@@ -12,7 +12,7 @@ interface ValidatorInterface
     /**
      * Validates the EcritureComptableInterface
      * @param EcritureComptableInterface $ecritureComptableInterface
-     * @throw FecValidationException
+     * @throws FecValidationException
      */
-    public function validate(EcritureComptableInterface $ecritureComptableInterface);
+    public function validate(EcritureComptableInterface $ecritureComptableInterface): void;
 }

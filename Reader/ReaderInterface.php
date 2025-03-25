@@ -12,8 +12,7 @@ interface ReaderInterface
     /**
      * Reads the FEC file
      * @param File  $file
-     *
      * @return array<array>
      */
-    public function read(File $file);
+    public function read(File $file): array;
 }

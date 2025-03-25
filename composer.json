@@ -4,8 +4,8 @@
     "description": "Generates FEC files (french accounting)",
     "minimum-stability": "dev",
     "require": {
-        "php": ">=5.6",
-        "symfony/framework-bundle": ">=2.7"
+        "php": ">=7.1",
+        "symfony/framework-bundle": ">=4.0"
     },
     "autoload": {
         "psr-4": { "A5sys\\FecBundle\\": "" }

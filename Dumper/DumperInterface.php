@@ -14,14 +14,11 @@ interface DumperInterface
      * @param File  $file
      * @param array $fieldNames array of the field names
      * @param array $data       assoc array of the data to be dumped
-     *
-     * @return File
      */
-    public function dump(File $file, $fieldNames, $data);
+    public function dump(File $file, $fieldNames, $data): File;
 
     /**
      * fileExtension getter
-     * @return string
      */
-    public function getFileExtension();
+    public function getFileExtension(): string;
 }

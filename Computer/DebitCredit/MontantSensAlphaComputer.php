@@ -18,23 +18,22 @@ class MontantSensAlphaComputer implements DebitCreditComputerInterface
      * Warning : order matters
      * @return array<string>
      */
-    public function getFieldNames()
+    public function getFieldNames(): array
     {
-        return array(
+        return [
             'Montant',
             'Sens',
-        );
+        ];
     }
 
     /**
      * Compute Debit and Credit Fields
      * Warning : order matters
      * @param EcritureComptableInterface $ecritureComptable
-     * @return type
      */
-    public function toArray(EcritureComptableInterface $ecritureComptable)
+    public function toArray(EcritureComptableInterface $ecritureComptable): array
     {
-        $data = array();
+        $data = [];
 
         if (!empty($ecritureComptable->getDebit())) {
             $data['Montant'] = $ecritureComptable->getDebit();
@@ -54,10 +53,9 @@ class MontantSensAlphaComputer implements DebitCreditComputerInterface
      * @param EcritureComptableInterface $ecritureComptable
      * @param array                      $data the FEC entry
      *
-     * @throw FecException
-     * @return EcritureComptableInterface
+     * @throws FecException
      */
-    public function toValueObject(EcritureComptableInterface $ecritureComptable, array $data)
+    public function toValueObject(EcritureComptableInterface $ecritureComptable, array $data): EcritureComptableInterface
     {
         if (!isset($data['Sens']) || !isset($data['Montant'])) {
             throw new FecException('Fields "Sens" and "Montant" are mandatory when using the computer '.get_class($this));
@@ -73,6 +71,6 @@ class MontantSensAlphaComputer implements DebitCreditComputerInterface
             $ecritureComptable->setCredit($data['Montant']);
         }
 
-        return $data;
+        return $ecritureComptable;
     }
 }

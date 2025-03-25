@@ -2,7 +2,6 @@
 
 namespace A5sys\FecBundle\Computer\DebitCredit;
 
-use A5sys\FecBundle\Exception\FecException;
 use A5sys\FecBundle\ValueObject\EcritureComptableInterface;
 
 /**
@@ -15,23 +14,22 @@ class DebitCreditComputer implements DebitCreditComputerInterface
      * Warning : order matters
      * @return array<string>
      */
-    public function getFieldNames()
+    public function getFieldNames(): array
     {
-        return array(
+        return [
             'Debit',
             'Credit',
-        );
+        ];
     }
 
     /**
      * Compute Debit and Credit Fields
      * Warning : order matters
      * @param EcritureComptableInterface $ecritureComptable
-     * @return type
      */
-    public function toArray(EcritureComptableInterface $ecritureComptable)
+    public function toArray(EcritureComptableInterface $ecritureComptable): array
     {
-        $data = array();
+        $data = [];
 
         $data['Debit'] = $ecritureComptable->getDebit();
         $data['Credit'] = $ecritureComptable->getCredit();
@@ -43,14 +41,12 @@ class DebitCreditComputer implements DebitCreditComputerInterface
      * Compute Debit and Credit Fields
      * @param EcritureComptableInterface $ecritureComptable
      * @param array                      $data the FEC entry
-     *
-     * @return EcritureComptableInterface
      */
-    public function toValueObject(EcritureComptableInterface $ecritureComptable, array $data)
+    public function toValueObject(EcritureComptableInterface $ecritureComptable, array $data): EcritureComptableInterface
     {
         $ecritureComptable->setDebit($data['Debit']);
         $ecritureComptable->setCredit($data['Credit']);
 
-        return $data;
+        return $ecritureComptable;
     }
 }

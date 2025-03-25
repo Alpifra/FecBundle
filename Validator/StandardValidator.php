@@ -14,12 +14,12 @@ class StandardValidator implements ValidatorInterface
     /**
      * Validate one EcritureComptableInterface
      * @param EcritureComptableInterface $ecritureComptable
-     * @throw FecValidationException
+     * @throws FecValidationException
      */
-    public function validate(EcritureComptableInterface $ecritureComptable)
+    public function validate(EcritureComptableInterface $ecritureComptable): void
     {
         // validate that all mandatory values are set
-        $notNullMethods = array(
+        $notNullMethods = [
             'JournalCode' => 'getJournalCode',
             'JournalLib' => 'getJournalLib',
             'EcritureNum' => 'getEcritureNum',
@@ -30,7 +30,7 @@ class StandardValidator implements ValidatorInterface
             'PieceDate' => 'getPieceDate',
             'EcritureLib' => 'getEcritureLib',
             'ValidDate' => 'getValidDate',
-        );
+        ];
 
         foreach ($notNullMethods as $field => $method) {
             if ($this->isNullOrEmptyString($ecritureComptable->$method())) {
@@ -52,7 +52,7 @@ class StandardValidator implements ValidatorInterface
      * return true if the value is null or is an empty string
      * @param mixed $value
      */
-    protected function isNullOrEmptyString($value)
+    protected function isNullOrEmptyString($value): bool
     {
         return is_null($value) || $value === '';
     }

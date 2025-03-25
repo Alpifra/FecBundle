@@ -14,29 +14,26 @@ interface NormalizerInterface
      * Warning : order matters
      * @return array<string>
      */
-    public function getFieldNames();
+    public function getFieldNames(): array;
 
     /**
      * compute data
      * Warning : order matters
      * @param EcritureComptableInterface $ecritureComptableInterface
-     *
-     * @return array
      */
-    public function toArray(EcritureComptableInterface $ecritureComptableInterface);
+    public function toArray(EcritureComptableInterface $ecritureComptableInterface): array;
 
      /**
      * Normalize one array to an EcritureComptableInterface
      * @param array $data
-     * @return EcritureComptableInterface
      */
-    public function toValueObject(array $data);
+    public function toValueObject(array $data): EcritureComptableInterface;
 
     /**
      * Validate the object
      * @param EcritureComptableInterface $ecritureComptable
      *
-     * @throw FecValidationException
+     * @throws FecValidationException
      */
     public function validateValueObject(EcritureComptableInterface $ecritureComptable);
 }

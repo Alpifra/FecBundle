@@ -2,9 +2,10 @@
 
 namespace A5sys\FecBundle\Normalizer;
 
+use A5sys\FecBundle\Exception\FecException;
+use A5sys\FecBundle\ValueObject\EcritureBNCTresorerie;
 use A5sys\FecBundle\ValueObject\EcritureBNCTresorerieInterface;
 use A5sys\FecBundle\ValueObject\EcritureComptableInterface;
-use A5sys\FecBundle\ValueObject\EcritureBNCTresorerie;
 
 /**
  * EN : Normalize input to an assoc array for BNC Tresorerie
@@ -17,24 +18,23 @@ class BNCTresorerieNormalizer extends BATresorerieNormalizer
      * Warning : order matters
      * @return array<string>
      */
-    public function getFieldNames()
+    public function getFieldNames(): array
     {
         $parentFields = parent::getFieldNames();
 
-        return array_merge($parentFields, array(
+        return array_merge($parentFields, [
             'IdClient',
-        ));
+        ]);
     }
 
     /**
      * Normalize one EcritureBNCTresorerieInterface
      * Warning : order matters
      * @param EcritureComptableInterface $ecritureComptable
-     * @throw A5sys\FecBundle\Exception\FecException
-     * @throw A5sys\FecBundle\Exception\FecValidationException
-     * @return array
+     * @throws A5sys\FecBundle\Exception\FecException
+     * @throws A5sys\FecBundle\Exception\FecValidationException
      */
-    public function toArray(EcritureComptableInterface $ecritureComptable)
+    public function toArray(EcritureComptableInterface $ecritureComptable): array
     {
         if (!$ecritureComptable instanceof EcritureBNCTresorerieInterface) {
             throw new FecException(get_class($this).' accepts only EcritureBNCTresorerieInterface instances. Maybe check object list you gave to the manager.');
@@ -52,9 +52,8 @@ class BNCTresorerieNormalizer extends BATresorerieNormalizer
     /**
      * Normalize one array to an EcritureComptableInterface
      * @param array $data
-     * @return EcritureBICIS
      */
-    public function toValueObject(array $data)
+    public function toValueObject(array $data): EcritureBNCTresorerie
     {
         $ecritureComptable = new EcritureBNCTresorerie();
 

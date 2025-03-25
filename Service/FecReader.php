@@ -5,6 +5,7 @@ namespace A5sys\FecBundle\Service;
 use A5sys\FecBundle\Computer\DebitCredit\DebitCreditComputerInterface;
 use A5sys\FecBundle\Normalizer\NormalizerInterface;
 use A5sys\FecBundle\Reader\ReaderInterface;
+use A5sys\FecBundle\ValueObject\EcritureComptableInterface;
 use Symfony\Component\HttpFoundation\File\File;
 
 /**
@@ -48,9 +49,9 @@ class FecReader
      * @param File $file
      *
      * @throws FecException
-     * @return array<\A5sys\FecBundle\ValueObject\EcritureComptableInterface>
+     * @return EcritureComptableInterface[]
      */
-    public function readFile(File $file)
+    public function readFile(File $file): array
     {
         // read the file to get an array of assoc array
         $data = $this->reader->read($file);

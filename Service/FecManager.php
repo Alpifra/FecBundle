@@ -2,11 +2,12 @@
 
 namespace A5sys\FecBundle\Service;
 
+use A5sys\FecBundle\Computer\ComputerInterface;
+use A5sys\FecBundle\Computer\DebitCredit\DebitCreditComputer;
 use A5sys\FecBundle\Dumper\DumperInterface;
-use Symfony\Component\HttpFoundation\File\File;
 use A5sys\FecBundle\Normalizer\NormalizerInterface;
 use A5sys\FecBundle\ValueObject\EcritureComptableInterface;
-use A5sys\FecBundle\Computer\DebitCredit\DebitCreditComputerInterface;
+use Symfony\Component\HttpFoundation\File\File;
 
 /**
  * Fec Manager is the entry point for generating FEC file
@@ -33,7 +34,7 @@ class FecManager
 
     /**
      * debitCredit instance to compute Debit and Credit fields (D/C or M/S)
-     * @var DebitCreditComputerInterface
+     * @var DebitCreditComputer
      */
     protected $debitCreditComputer;
 
@@ -44,7 +45,7 @@ class FecManager
      * @param NormalizerInterface $normalizer
      * @param ComputerInterface   $debitCreditComputer
      */
-    public function __construct($directory, DumperInterface $dumper, NormalizerInterface $normalizer, DebitCreditComputerInterface $debitCreditComputer)
+    public function __construct($directory, DumperInterface $dumper, NormalizerInterface $normalizer, DebitCreditComputer $debitCreditComputer)
     {
         $this->directory = $directory;
         $this->dumper = $dumper;
@@ -59,13 +60,12 @@ class FecManager
      * @param array<EcritureComptableInterface> $ecritureComptableList List of conventionned input objects
      *
      * @throws \A5sys\FecBundle\Exception\FecException
-     * @return File
      */
-    public function generateFile($siren, \DateTime $dateClotureExercice, $ecritureComptableList)
+    public function generateFile($siren, \DateTime $dateClotureExercice, $ecritureComptableList): File
     {
         $file = $this->getFile($siren, $dateClotureExercice);
 
-        $data = array();
+        $data = [];
         // loop over each EcritureComptableinterface to get correct FEC entry
         foreach ($ecritureComptableList as $ecritureComptable) {
             $baseData = $this->normalizer->toArray($ecritureComptable);
@@ -87,9 +87,8 @@ class FecManager
      * Get the File object
      * @param string    $siren                 Siren number
      * @param \DateTime $dateClotureExercice   Closing date
-     * @return File
      */
-    protected function getFile($siren, \DateTime $dateClotureExercice)
+    protected function getFile($siren, \DateTime $dateClotureExercice): File
     {
         $extension = $this->dumper->getFileExtension();
         $filename = $this->getFileName($siren, $dateClotureExercice);
@@ -102,10 +101,9 @@ class FecManager
      * Get the file name of the FEC for the siren and the closing date
      * @param string    $siren
      * @param \DateTime $dateClotureExercice
-     *
      * @return string <Siren>FEC<AAAAMMJJ>
      */
-    protected function getFileName($siren, \DateTime $dateClotureExercice)
+    protected function getFileName($siren, \DateTime $dateClotureExercice): string
     {
         return $siren.'FEC'.$dateClotureExercice->format('Ymd');
     }

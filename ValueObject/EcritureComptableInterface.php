@@ -9,235 +9,199 @@ interface EcritureComptableInterface
 {
     /**
      * Retourne le code journal de l'écriture comptable
-     * @return string
      */
-    public function getJournalCode();
+    public function getJournalCode(): string;
 
     /**
      * Retourne le libellé journal de l'écriture comptable
-     * @return string
      */
-    public function getJournalLib();
+    public function getJournalLib(): string;
 
     /**
      * Retourne le numéro sur une séquence continue de l'écriture comptable
-     * @return string
      */
-    public function getEcritureNum();
+    public function getEcritureNum(): string;
 
     /**
      * Retourne la date de comptabilisation de l'écriture comptable
-     * @return \DateTime
      */
-    public function getEcritureDate();
+    public function getEcritureDate(): \DateTime;
 
     /**
      * Retourne le numéro de compte, dont les trois premiers caractères doivent correspondre à des chiffres respectant les normes du plan comptable français
-     * @return string
      */
-    public function getCompteNum();
+    public function getCompteNum(): string;
 
     /**
      * Retourne le libellé de compte, conformément à la nomenclature du plan comptable français
-     * @return string
      */
-    public function getCompteLib();
+    public function getCompteLib(): string;
 
     /**
      * Retourne le numéro de compte auxiliaire (à blanc si non utilisé)
-     * @return string
      */
-    public function getCompAuxNum();
+    public function getCompAuxNum(): string;
 
     /**
      * Retourne le libellé de compte auxiliaire (à blanc si non utilisé)
-     * @return string
      */
-    public function getCompAuxLib();
+    public function getCompAuxLib(): string;
 
     /**
      * Retourne la référence de la pièce justificative
-     * @return string
      */
-    public function getPieceRef();
+    public function getPieceRef(): string;
 
     /**
      * Retourne la date de la pièce justificative
-     * @return \DateTime
      */
-    public function getPieceDate();
+    public function getPieceDate(): \DateTime;
 
     /**
      * Retourne le libellé de l'écriture comptable
-     * @return string
      */
-    public function getEcritureLib();
+    public function getEcritureLib(): string;
 
     /**
      * Retourne le montant au débit
-     * @return float
      */
-    public function getDebit();
+    public function getDebit(): float;
 
     /**
      * Retourne le montant au crédit
-     * @return float
      */
-    public function getCredit();
+    public function getCredit(): float;
 
     /**
      * Retourne le lettrage de l'écriture comptable (à blanc si non utilisé)
-     * @return string
      */
-    public function getEcritureLet();
+    public function getEcritureLet(): string;
 
     /**
      * Retourne la date de lettrage (à blanc si non utilisé)
-     * @return \DateTime
      */
-    public function getDateLet();
+    public function getDateLet(): \DateTime;
 
     /**
      * Retourne la date de validation de l'écriture comptable
-     * @return \DateTime
      */
-    public function getValidDate();
+    public function getValidDate(): \DateTime;
 
     /**
      * Retourne le montant en devise (à blanc si non utilisé)
-     * @return float
      */
-    public function getMontantdevise();
+    public function getMontantdevise(): float;
 
     /**
      * Retourne l'identifiant de la devise (à blanc si non utilisé)
-     * @return string
      */
-    public function getIdevise();
+    public function getIdevise(): string;
 
     /**
      * Affecte le code journal de l'écriture comptable
      * @param string $journalCode
-     * @return \A5sys\FecBundle\ValueObject\EcritureComptableInterface
      */
-    public function setJournalCode($journalCode);
+    public function setJournalCode($journalCode): self;
 
     /**
      * Affecte le libellé journal de l'écriture comptable
      * @param string $journalLib
-     * @return \A5sys\FecBundle\ValueObject\EcritureComptableInterface
      */
-    public function setJournalLib($journalLib);
+    public function setJournalLib($journalLib): self;
 
     /**
      * Affecte le numéro sur une séquence continue de l'écriture comptable
      * @param string $ecritureNum
-     * @return \A5sys\FecBundle\ValueObject\EcritureComptableInterface
      */
-    public function setEcritureNum($ecritureNum);
+    public function setEcritureNum($ecritureNum): self;
 
     /**
      * Affecte la date de comptabilisation de l'écriture comptable
      * @param \DateTime $ecritureDate
-     * @return \A5sys\FecBundle\ValueObject\EcritureComptableInterface
      */
-    public function setEcritureDate(\DateTime $ecritureDate);
+    public function setEcritureDate(\DateTime $ecritureDate): self;
 
     /**
      * Affecte le numéro de compte, dont les trois premiers caractères doivent correspondre à des chiffres respectant les normes du plan comptable français
      * @param string $compteNum
-     * @return \A5sys\FecBundle\ValueObject\EcritureComptableInterface
      */
-    public function setCompteNum($compteNum);
+    public function setCompteNum($compteNum): self;
 
     /**
      * Affecte le libellé de compte, conformément à la nomenclature du plan comptable français
      * @param string $compteLib
-     * @return \A5sys\FecBundle\ValueObject\EcritureComptableInterface
      */
-    public function setCompteLib($compteLib);
+    public function setCompteLib($compteLib): self;
 
     /**
      * Optionnel - Affecte le numéro de compte auxiliaire (à blanc si non utilisé)
      * @param string $compAuxNum
-     * @return \A5sys\FecBundle\ValueObject\EcritureComptableInterface
      */
-    public function setCompAuxNum($compAuxNum = null);
+    public function setCompAuxNum($compAuxNum = null): self;
 
     /**
      * Optionnel - Affecte le libellé de compte auxiliaire (à blanc si non utilisé)
      * @param string $compAuxLib
-     * @return \A5sys\FecBundle\ValueObject\EcritureComptableInterface
      */
-    public function setCompAuxLib($compAuxLib = null);
+    public function setCompAuxLib($compAuxLib = null): self;
 
     /**
      * Affecte la référence de la pièce justificative
      * @param string $pieceRef
-     * @return \A5sys\FecBundle\ValueObject\EcritureComptableInterface
      */
-    public function setPieceRef($pieceRef);
+    public function setPieceRef($pieceRef): self;
 
     /**
      * Affecte la date de la pièce justificative
      * @param \DateTime $pieceDate
-     * @return \A5sys\FecBundle\ValueObject\EcritureComptableInterface
      */
-    public function setPieceDate(\DateTime $pieceDate);
+    public function setPieceDate(\DateTime $pieceDate): self;
 
     /**
      * Affecte le libellé de l'écriture comptable
      * @param string $ecritureLib
-     * @return \A5sys\FecBundle\ValueObject\EcritureComptableInterface
      */
-    public function setEcritureLib($ecritureLib);
+    public function setEcritureLib($ecritureLib): self;
 
     /**
      * Affecte le montant au débit
      * @param float $debit
-     * @return \A5sys\FecBundle\ValueObject\EcritureComptableInterface
      */
-    public function setDebit($debit);
+    public function setDebit($debit): self;
 
     /**
      * Affecte le montant au crédit
      * @param float $credit
-     * @return \A5sys\FecBundle\ValueObject\EcritureComptableInterface
      */
-    public function setCredit($credit);
+    public function setCredit($credit): self;
 
     /**
      * Optionnel - Affecte le lettrage de l'écriture comptable (à blanc si non utilisé)
      * @param string $ecritureLet
-     * @return \A5sys\FecBundle\ValueObject\EcritureComptableInterface
      */
-    public function setEcritureLet($ecritureLet = null);
+    public function setEcritureLet($ecritureLet = null): self;
 
     /**
      * Optionnel - Affecte la date de lettrage (à blanc si non utilisé)
      * @param \DateTime $dateLet
-     * @return \A5sys\FecBundle\ValueObject\EcritureComptableInterface
      */
-    public function setDateLet(\DateTime $dateLet = null);
+    public function setDateLet(\DateTime $dateLet = null): self;
 
     /**
      * Affecte la date de validation de l'écriture comptable
      * @param \DateTime $validDate
-     * @return \A5sys\FecBundle\ValueObject\EcritureComptableInterface
      */
-    public function setValidDate(\DateTime $validDate);
+    public function setValidDate(\DateTime $validDate): self;
 
     /**
      * Optionnel - Affecte le montant en devise (à blanc si non utilisé)
      * @param float $montantDevise
-     * @return \A5sys\FecBundle\ValueObject\EcritureComptableInterface
      */
-    public function setMontantdevise($montantDevise = null);
+    public function setMontantdevise($montantDevise = null): self;
 
     /**
      * Optionnel - Affecte l'identifiant de la devise (à blanc si non utilisé)
      * @param string $idDevise
-     * @return \A5sys\FecBundle\ValueObject\EcritureComptableInterface
      */
-    public function setIdevise($idDevise = null);
+    public function setIdevise($idDevise = null): self;
 }
