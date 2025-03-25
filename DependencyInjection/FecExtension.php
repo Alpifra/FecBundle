@@ -2,12 +2,10 @@
 
 namespace A5sys\FecBundle\DependencyInjection;
 
-use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;
-use Symfony\Component\HttpKernel\DependencyInjection\Extension;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\Extension\Extension;
 use Symfony\Component\DependencyInjection\Loader;
-use Symfony\Component\DependencyInjection\Definition;
-use Symfony\Component\DependencyInjection\Reference;
 
 /**
  * This is the class that loads and manages your bundle configuration.
@@ -18,6 +16,8 @@ class FecExtension extends Extension
 {
     /**
      * {@inheritdoc}
+     * 
+     * @return void
      */
     public function load(array $configs, ContainerBuilder $container)
     {
