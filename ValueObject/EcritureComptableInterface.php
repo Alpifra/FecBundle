@@ -65,12 +65,12 @@ interface EcritureComptableInterface
     /**
      * Retourne le montant au débit
      */
-    public function getDebit(): float;
+    public function getDebit(): ?float;
 
     /**
      * Retourne le montant au crédit
      */
-    public function getCredit(): float;
+    public function getCredit(): ?float;
 
     /**
      * Retourne le lettrage de l'écriture comptable (à blanc si non utilisé)

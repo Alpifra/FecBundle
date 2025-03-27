@@ -207,7 +207,7 @@ abstract class AbstractEcritureComptable implements EcritureComptableInterface
     /**
      * Retourne le montant au débit
      */
-    public function getDebit(): float
+    public function getDebit(): ?float
     {
         return $this->debit;
     }
@@ -215,7 +215,7 @@ abstract class AbstractEcritureComptable implements EcritureComptableInterface
     /**
      * Retourne le montant au crédit
      */
-    public function getCredit(): float
+    public function getCredit(): ?float
     {
         return $this->credit;
     }

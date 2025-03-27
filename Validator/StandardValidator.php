@@ -39,11 +39,11 @@ class StandardValidator implements ValidatorInterface
         }
 
         // validate that only one of Debit and Credit is set
-        if (!empty($ecritureComptable->getDebit()) && !empty($ecritureComptable->getCredit())) {
+        if (!is_null($ecritureComptable->getDebit()) && !is_null($ecritureComptable->getCredit())) {
             throw new FecValidationException('Field Debit and Credit must not be set at the same time for class '.get_class($ecritureComptable));
         }
 
-        if (empty($ecritureComptable->getDebit()) && empty($ecritureComptable->getCredit())) {
+        if (is_null($ecritureComptable->getDebit()) && is_null($ecritureComptable->getCredit())) {
             throw new FecValidationException('Either Debit or Credit must be set for class '.get_class($ecritureComptable).'. None were given');
         }
     }
