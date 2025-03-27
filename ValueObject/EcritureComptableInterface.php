@@ -40,12 +40,12 @@ interface EcritureComptableInterface
     /**
      * Retourne le numéro de compte auxiliaire (à blanc si non utilisé)
      */
-    public function getCompAuxNum(): string;
+    public function getCompAuxNum(): ?string;
 
     /**
      * Retourne le libellé de compte auxiliaire (à blanc si non utilisé)
      */
-    public function getCompAuxLib(): string;
+    public function getCompAuxLib(): ?string;
 
     /**
      * Retourne la référence de la pièce justificative
@@ -75,12 +75,12 @@ interface EcritureComptableInterface
     /**
      * Retourne le lettrage de l'écriture comptable (à blanc si non utilisé)
      */
-    public function getEcritureLet(): string;
+    public function getEcritureLet(): ?string;
 
     /**
      * Retourne la date de lettrage (à blanc si non utilisé)
      */
-    public function getDateLet(): \DateTime;
+    public function getDateLet(): ?\DateTime;
 
     /**
      * Retourne la date de validation de l'écriture comptable
@@ -90,12 +90,12 @@ interface EcritureComptableInterface
     /**
      * Retourne le montant en devise (à blanc si non utilisé)
      */
-    public function getMontantdevise(): float;
+    public function getMontantdevise(): ?float;
 
     /**
      * Retourne l'identifiant de la devise (à blanc si non utilisé)
      */
-    public function getIdevise(): string;
+    public function getIdevise(): ?string;
 
     /**
      * Affecte le code journal de l'écriture comptable

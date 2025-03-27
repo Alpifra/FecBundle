@@ -167,7 +167,7 @@ abstract class AbstractEcritureComptable implements EcritureComptableInterface
     /**
      * Retourne le numéro de compte auxiliaire (à blanc si non utilisé)
      */
-    public function getCompAuxNum(): string
+    public function getCompAuxNum(): ?string
     {
         return $this->compAuxNum;
     }
@@ -175,7 +175,7 @@ abstract class AbstractEcritureComptable implements EcritureComptableInterface
     /**
      * Retourne le libellé de compte auxiliaire (à blanc si non utilisé)
      */
-    public function getCompAuxLib(): string
+    public function getCompAuxLib(): ?string
     {
         return $this->compAuxLib;
     }
@@ -223,7 +223,7 @@ abstract class AbstractEcritureComptable implements EcritureComptableInterface
     /**
      * Retourne le lettrage de l'écriture comptable (à blanc si non utilisé)
      */
-    public function getEcritureLet(): string
+    public function getEcritureLet(): ?string
     {
         return $this->ecritureLet;
     }
@@ -231,7 +231,7 @@ abstract class AbstractEcritureComptable implements EcritureComptableInterface
     /**
      * Retourne la date de lettrage (à blanc si non utilisé)
      */
-    public function getDateLet(): \DateTime
+    public function getDateLet(): ?\DateTime
     {
         return $this->dateLet;
     }
@@ -247,7 +247,7 @@ abstract class AbstractEcritureComptable implements EcritureComptableInterface
     /**
      * Retourne le montant en devise (à blanc si non utilisé)
      */
-    public function getMontantdevise(): float
+    public function getMontantdevise(): ?float
     {
         return $this->montantdevise;
     }
@@ -255,7 +255,7 @@ abstract class AbstractEcritureComptable implements EcritureComptableInterface
     /**
      * Retourne l'identifiant de la devise (à blanc si non utilisé)
      */
-    public function getIdevise(): string
+    public function getIdevise(): ?string
     {
         return $this->idevise;
     }
